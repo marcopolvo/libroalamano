@@ -1,0 +1,2 @@
+[04-Oct-2016 16:25:34 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/libroala/public_html/Herramientas/conexion1.php:9) in /home/libroala/public_html/Herramientas/generarlibrosGeneral.php on line 3
+[04-Oct-2016 16:25:34 America/Bogota] PHP Fatal error:  Call to a member function prepare() on null in /home/libroala/public_html/Herramientas/generarlibrosGeneral.php on line 12

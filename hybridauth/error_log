@@ -1,0 +1,176 @@
+[05-Oct-2016 00:43:47 America/Bogota] PHP Fatal error:  Uncaught exception 'Exception' with message 'Authentication failed! Facebook returned an invalid user id.' in /home/libroala/public_html/hybridauth/Hybrid/Auth.php:169
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(214): Hybrid_Auth::initialize(Array)
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#3 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#4 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#5 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: Authentication failed! Facebook returned an invalid user id.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/pu in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 00:43:56 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:125
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#2 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#3 {main}
+  thrown in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 125
+[05-Oct-2016 10:23:25 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 10:23:29 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 11:28:54 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 11:29:01 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:18:30 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:23:32 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:23:32 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:23:36 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:23:47 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:23:56 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:25:23 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
+[05-Oct-2016 13:25:23 America/Bogota] PHP Fatal error:  Uncaught exception 'Hybrid_Exception' with message 'You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:211
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(72): Hybrid_Endpoint->__construct(NULL)
+#3 /home/libroala/public_html/hybridauth/index.php(15): Hybrid_Endpoint::process()
+#4 {main}
+
+Next exception 'Hybrid_Exception' with message 'Endpoint: Error while trying to init Hybrid_Auth: You cannot access this page directly.' in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php:217
+Stack trace:
+#0 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(117): Hybrid_Endpoint->authInit()
+#1 /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php(51): Hybrid_Endpoint->processAuthStart()
+#2 /home/libroala/public_html/hybridauth/Hybrid/End in /home/libroala/public_html/hybridauth/Hybrid/Endpoint.php on line 217
