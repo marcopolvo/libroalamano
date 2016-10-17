@@ -62,14 +62,14 @@
 					clone.querySelector('#precio').innerHTML = datos[0].precio;
 					clone.querySelector('#listadeseos').innerHTML = datos[0].librosrequeridos;	
 				}
-				clone.querySelector('#usuariofertante').innerHTML = datos[0].usuario;
-				clone.querySelector('#estadolibro').innerHTML = datos[0].estadolibro;
-				document.querySelector('.ventanofertas').appendChild(clone);
+					clone.querySelector('#usuariofertante').innerHTML = datos[0].usuario;
+					clone.querySelector('#estadolibro').innerHTML = datos[0].estadolibro;
+					document.querySelector('.ventana_oferta').appendChild(clone);
 				}else{
-					var t = document.querySelector('#template_sinofertas')
+					var t = document.querySelector('#template_sindatos')
 					var clone = document.importNode(t.content, true)
 					//clone.querySelector('#estadolibro').innerHTML += '.';
-					document.querySelector('.ventanofertas').appendChild(clone);
+					document.querySelector('.ventana_oferta').appendChild(clone);
 				}
 			},
   			error: function(XMLHttpRequest, textStatus, errorThrown) {

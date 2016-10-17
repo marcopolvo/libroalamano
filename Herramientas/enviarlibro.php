@@ -30,9 +30,9 @@
 	$insertarB = $pdo->prepare($sqlB);
 	$insertarB->execute(array($usuario, $precio, $librosrequeridos, $estadolibro, $estado, $codigo));
 	
-	//header('location:../Subirlibros.php');
+	header('location:../Subirlibros.php');
 	
-	echo "\nPDOStatement::errorInfo():\n";
+	/*echo "\nPDOStatement::errorInfo():\n";
 	$arr = $insertar->errorInfo();
-	print_r($arr);
+	print_r($arr);*/
 ?>
