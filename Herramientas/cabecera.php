@@ -1,6 +1,15 @@
-<?php 
-    if (isset($_SESSION['usuario'])) {
-        $correo = $_SESSION['email'];
+<?php
+  include_once('conexion1.php'); 
+  if (isset($_SESSION['usuario'])) {
+    $correo = $_SESSION['email'];
+
+    $sql = "SELECT COUNT(*) FROM mensajes WHERE receptor = '{$correo}'&& estado = 'sinleer'";
+    $resultados = $pdo->query($sql);
+    $cuenta = $resultados->fetchColumn();
+    if ($cuenta>0) {
+      $contador = '<span class="mensaje_indicador" id="indicadormensaje">'.$cuenta.'</span>';
+    }else
+      $contador =' ';
 ?>
 <header id="header">
 	<h1 class="logo__principal">
@@ -10,29 +19,25 @@
 	</h1>
 	<nav id="nav">
 		<ul>
-            <li>
-            	<a href="Subirlibros.php" class="button small">Subir Libro</a>
-            </li>
-            <li><?php echo $correo ?></li>
-			<li>
-                <a href="mensajes.php"><i class="fa fa-envelope fa-lg" aria-hidden="true"><span class="mensaje_indicador" id="indicadormensaje"><?php 
-                                    include_once('Herramientas/conexion1.php');
-                                    $sql = "SELECT COUNT(*) FROM mensajes WHERE receptor = '{$correo}'&& estado = 'sinleer'";
-                                    $resultados = $pdo->query($sql);
-                                    $cuenta = $resultados->fetchColumn();
-                                    echo $cuenta;                                    
-                                ?>
-                </span></i>Mensaje</a>
-            </li>
-            <li>
-            	<a href="Herramientas/salir.php"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> salir</a>
-            </li>
-            <li class="xxx">
-                <a href="Principal.php">
-                	<img src="<?php echo $_SESSION['foto'] ?>" alt="imagen usuario" class="img_perfil">
-                    <!--<span><?//php echo $_SESSION['usuario'] ?></span>-->
-                </a>
-            </li>
+      <li>
+        <a href="Principal.php"><i class="fa fa-home fa-lg" aria-hidden="true"></i>  Inicio</a></li>
+      <li>
+        <a href="mensajes.php">
+          <?php echo $contador;?>
+          <i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Mensaje
+        </a>
+      </li>
+      <li>
+        <a href="Subirlibros.php" class="button small">Subir Libro</a>
+      </li>
+      <li>
+      	<a href="Herramientas/salir.php"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> salir</a>
+      </li>
+      <li class="xxx">
+          <a href="Principal.php">
+          	<img src="<?php echo $_SESSION['foto'] ?>" alt="imagen usuario" class="img_perfil">
+          </a>
+      </li>
 		</ul>
 	</nav>
 </header>

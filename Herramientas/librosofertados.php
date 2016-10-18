@@ -12,6 +12,7 @@
 
 	foreach ($results as $valor) {
 		$libros[$contador++] = array(
+			'id' => $valor['id'],
 			'usuario' => $valor['usuario'],
 			'precio' => $valor['precio'],
 			'librosrequeridos' => $valor['librosrequeridos'],

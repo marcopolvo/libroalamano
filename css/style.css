@@ -1393,7 +1393,10 @@ template .libro_detalles>p{
     justify-content: space-around;
     border-bottom: solid gray 1px;
 }
-
+.vendedor_costo{
+	width: 70%;
+	margin-left: 2em;
+}
 .vendedor_costo>p{
     margin: 0;
     padding: 0;
@@ -1428,7 +1431,7 @@ template .libro_detalles>p{
 }
 /***********************libro***************************/
 .ventana_oferta{
-	max-width: 50%;
+	width: 50%;
     margin: auto;
     padding:1em 2em;
     background-color:white;
@@ -1599,12 +1602,22 @@ p.p_sencillo{
 .mensaje_indicador{
 	background-color:#f5443b; 
 	border-radius: 50%;
-	font-size: .5em;
+	font-size: .6em;
 	padding:1px 4px;
+	
 	position: relative;
-	top: .4em;
-	left: -2.5em;
-	color: white;	
+	display: inline-block;
+	
+	height: 1.4em;
+	line-height:1em;
+	top: .5em;
+	left: 1.4em;
+	color: white;	 
+	/* 
+	*/
+}
+.iconocarta{
+	
 }
 .mainmensaje{
 	padding: 2em;
@@ -1663,6 +1676,7 @@ p.p_sencillo{
 .sin_mensajes_contenido{
 	color:gray;
 	padding: 2em;
+	text-align: center;
 
 }
 .sin{

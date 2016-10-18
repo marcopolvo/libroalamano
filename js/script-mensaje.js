@@ -78,7 +78,7 @@ function borrarMensaje(boton){
 			},
 			success: function(datos){
 				console.log(datos)
-				location. reload() 
+				location.reload() 
 			}
 		});
 	}else{
@@ -88,34 +88,4 @@ function borrarMensaje(boton){
 
 function reportarMensaje(){
 	var confirmar = confirm('Reportar un mensaje es una opción seria\n¿Estás seguro que desear reportar este mensaje?')
-}
-
-/*
-Se puede obtener informacion útil inspecionando el Objeto XMLHttpRequest
-$('#prondado_id').on('click',function(){
-      console.log('en el id')
-});
-$("#botonenviarmensaje").click(function(){
-})
- 
-function borrarmensaje(boton){
-
-}
-function denuciar(boton){
-	
-}
-function responder(boton){
-	
-}
-        		"cantidad": cantidad
-				clone.querySelector('img').src = data[i].portada;
-				clone.querySelector('#mensajerespuesta').id.value += i
-    document.getElementById('respuesta').value = '' 
-	var divpadre = boton.parents('.ofrecerlibros');
-    var desplegableboton = 
-	console.log(desplegableboton);
-$('.boton_responder').on('click',function(){
-	var divpadre = $(this).parents('.ofrecerlibros');
-	console.log(this);
-});
-*/	
+}	

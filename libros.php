@@ -1,9 +1,7 @@
 <?php 
     SESSION_START(); 
     $libro = isset($_GET['libro'])?$_GET['libro']:'no hay nada';
-    $usuario = isset($_SESSION['usuario'])?$_SESSION['usuario']:'';
-
-
+    $usuario = isset($_SESSION['email'])?$_SESSION['email']:'';
  ?>
 <!DOCTYPE html>
 
@@ -71,25 +69,25 @@
             <div class="datosoferente">
               <div class="vendedor_foto">
                 <img src="images/no-user.png" alt="" class="foto_oferente">
-                <p id="usuariofertante">Nombre usuario</p>
+                <p class="usuariofertante">Nombre usuario</p>
               </div>
               <div class="vendedor_costo">
-                <h4 id="estado">Vender o intercambiar</h4>
-                <p><b>Precio: $</b><span id="precio"></span></p>
-                <p><b>Lista de deseos: </b><span id="listadeseos"></span></p>
+                <h3 class="estado">Vender o intercambiar</h3>
+                <p class="precio"></p>
+                <p class="listadeseos"></p>
                 <b><p class="p_sencillo">Estado del libro:<p></b>
-                <p id="estadolibro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde, soluta illum cum deleniti, sapiente.</p>
+                <p class="estadolibro"></p>
               </div>
-            </div>
               <div class="imagenboton">
                 <img src="images/sin_foto.png" alt="" class="imagen_libro_real">
-                <a href="#" class="button small" onclick="mostrarModal(this.id)">Contactar</a>
+                <a class="button small" onClick="mostrarModal(this)">Contactar</a>
               </div>                        
-          </div>
-          <div class="desplegable" id="mensajeintercambio">
-            <a href="#" class="boton_cerrar fa fa-times"></a>
-            <textarea name="mensaje"  id="mensajelibro" cols="30" rows="3" placeholder="Envía un mensaje para contactar"></textarea>
-            <input type="submit" class="fit" id="botonenviarmensaje">
+            </div>
+            <div class="desplegable" >
+              <a href="#" class="boton_cerrar fa fa-times"></a>
+              <textarea name="mensaje"   cols="30" rows="3" placeholder="Envía un mensaje para contactar"></textarea>
+              <input type="submit" class="fit" >
+            </div>
           </div>
         </template>
         <template id='template_sindatos'>
@@ -107,7 +105,7 @@
 				<section class="box">
 				  <div class="adquirir_detalle">
             <div class="adquirir_detalle_imagen">
-              <img src="images/Sin_portada.png" alt="portada del libro" id="libro__portada">
+              <img alt="portada del libro" id="libro__portada">
             </div>
 						<div class="adquirir_detalle_descripcion">
 							<h3 id="libro__titulo">No hay título</h3>
@@ -123,11 +121,6 @@
 							<a href="#" class="button" id="boton_adquirir" onclick="mostrarModaloferta()">Adquirir</a>
 						</div>
           </div>     
-          <div class="lista_similares" id="ofertaslibros">
-            <h3 class="subtitulo_seccion">
-              Usuarios con este libro
-            </h3>      
-          </div>
 	        <div class="lista_similares">
 	          <h3 class="subtitulo_seccion">
               También te podrían interesar

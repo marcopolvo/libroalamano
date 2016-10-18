@@ -33,56 +33,55 @@
 		<?php require_once('Herramientas/cabecera.php');?>
 
 		<!-- Main -->
-			<section id="main" class="box wrapper mainmensaje">
-				<nav  class="mensajes_navegador">
-					<ul>
-						<li><a href="#">
-								<h3>Recibidos</h3>
-						</a></li>
-					</ul>
-				</nav>
-				<div class="mensajes_contenedor">
-					<h3 class="subtitulo_seccion">
-						Mensajes recibidos
-					</h3>
-					<template id='template_mensajes'>
-						<div class="ofrecerlibros">					
-							<div class="datosoferente">
-								<div class="vendedor_foto">
-									<img src="" alt="" class="foto_oferente">
-								</div>
-								<div class="mensaje_recibido">
-									<p class="usuariomensaje"></p>
-									<input type="hidden" class="emailreceptor">
-									<p class="fechamensaje">
-										<span class="hora"> </span> del <span class="fecha"> </span>
-									</p>
-									<p class="mensaje_contenido"></p>
-								</div>
-							</div>                       
-							<div class="mensaje_botones">
-									<a class="mensaje_boton_reportar" title="Reporta este mensaje por abuso" onclick="reportarMensaje()">Reportar
-										<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>
-									</a>
-									<a class="mensaje_boton_reportar" title="Borrar este mensaje" onclick="borrarMensaje(this)">Borrar
-										<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-									</a>
-								<a  class="button small alt boton_responder" onclick="clickboton(this)">Responder</a>
+		<section id="main" class="box wrapper mainmensaje">
+			<nav  class="mensajes_navegador">
+				<ul>
+					<li><a href="#">
+							<h3>Recibidos</h3>
+					</a></li>
+				</ul>
+			</nav>
+			<div class="mensajes_contenedor">
+				<h3 class="subtitulo_seccion">
+					Mensajes recibidos
+				</h3>
+				<template id='template_mensajes'>
+					<div class="ofrecerlibros">					
+						<div class="datosoferente">
+							<div class="vendedor_foto">
+								<img src="" alt="" class="foto_oferente">
 							</div>
-							<div class="desplegable">
-								<textarea name="respuesta" class="mensaje_respuesta" cols="30" rows="3" placeholder="Responde al mensaje"></textarea>
-								<input type="button" value="Enviar" class="button" onclick ="enviarmensaje(this)"">
+							<div class="mensaje_recibido">
+								<p class="usuariomensaje"></p>
+								<input type="hidden" class="emailreceptor">
+								<p class="fechamensaje">
+									<span class="hora"> </span> del <span class="fecha"> </span>
+								</p>
+								<p class="mensaje_contenido"></p>
 							</div>
+						</div>                       
+						<div class="mensaje_botones">
+							<a class="mensaje_boton_reportar" title="Reporta este mensaje por abuso" onClick="reportarMensaje()">Reportar
+								<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>
+							</a>
+							<a class="mensaje_boton_reportar" title="Borrar este mensaje" onClick="borrarMensaje(this)">Borrar
+								<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+							</a>
+							<a  class="button small alt boton_responder" onClick="clickboton(this)">Responder</a>
 						</div>
-					</template>
-			<section class="sin">
-				<template id='sin_mensajes'>
-						<h4 class="sin_mensajes_contenido"></h4>
+						<div class="desplegable">
+							<textarea name="respuesta" class="mensaje_respuesta" cols="30" rows="3" placeholder="Responde al mensaje"></textarea>
+							<input type="button" value="Enviar" class="button" onClick ="enviarmensaje(this)">
+						</div>
+					</div>
 				</template>
-				</div>
-			</section>
-				</div>
-			</section>
+				<section class="sin">
+					<template id='sin_mensajes'>
+							<h4 class="sin_mensajes_contenido"></h4>
+					</template>
+				</section>
+			</div>
+		</section>
 
 		<!-- Footer -->
 		<?php require_once('Herramientas/pie.php');?>

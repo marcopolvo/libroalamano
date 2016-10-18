@@ -68,6 +68,29 @@
         Email varchar(100)
         )";
     */
+    $librosfavoritos = "CREATE TABLE IF NOT EXISTS 'librosfavoritos'(
+    'usuario' varchar(50) NOT NULL PRIMARY KEY,
+    'codigolibro' varchar(50) NOT NULL,
+    'genero' varchar(50) NOT NULL
+    )";
+
+    $tableUser = "CREATE TABLE IF NOT EXISTS `usuarios` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `email` varchar(50) NOT NULL,
+        `nombre` varchar(50) NOT NULL,
+        `apellido` varchar(50) NOT NULL,
+        `usuario` varchar(50) NOT NULL,
+        `clave` varchar(250) NOT NULL,
+        `foto` varchar(250),
+        `genero` varchar(50) NOT NULL,
+        `tipo_usuario` varchar(50) NOT NULL,
+        `fecha_registro` datetime NOT NULL,
+        `provedor_nombre` VARCHAR(255),
+        `provedor_id_user` VARCHAR(255),
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `email` (`email`)
+    )   ENGINE=InnoDB  DEFAULT CHARSET=utf8";
+
     if ($conexion->query($tableUser)){
     	echo ' La tabla usuarios se creo satisfactoriamente</br>';
     }else{
@@ -84,6 +107,12 @@
         echo ' La tabla libro se creo satisfactoriamente</br>';
     }else{
         echo ' Error al crear la tabla libro'. $conexion->error;
+    }
+
+    if ($conexion->query($librosfavoritos)){
+        echo ' La tabla librosfavoritos se creo satisfactoriamente</br>';
+    }else{
+        echo ' Error al crear la tabla librosfavoritos'. $conexion->error;
     }
     /*
     if ($conexion->query($datosTienda)){
