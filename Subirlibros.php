@@ -60,7 +60,7 @@
             </h3>
 	           <div class="contenedor">
 			        <div class="contenedor_izquierdo">
-			        	<input type="hidden" name="usuario" value="<?php echo $_SESSION['usuario'] ?>">
+			        	<input type="hidden" name="usuario" value="<?php echo $_SESSION['email'] ?>">
 			            <select name="genero" id="">
 	                        <option>Género del libro<span class="flecha"></span></option>
 	                        <option>Académico</option>

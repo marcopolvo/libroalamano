@@ -68,8 +68,9 @@
           <div class="ofrecerlibros">
             <div class="datosoferente">
               <div class="vendedor_foto">
-                <img src="images/no-user.png" alt="" class="foto_oferente">
+                <img alt="" class="foto_oferente">
                 <p class="usuariofertante">Nombre usuario</p>
+                <input type="hidden" class="nombreoferente">
               </div>
               <div class="vendedor_costo">
                 <h3 class="estado">Vender o intercambiar</h3>
@@ -85,8 +86,8 @@
             </div>
             <div class="desplegable" >
               <a href="#" class="boton_cerrar fa fa-times"></a>
-              <textarea name="mensaje"   cols="30" rows="3" placeholder="Envía un mensaje para contactar"></textarea>
-              <input type="submit" class="fit" >
+              <textarea name="mensaje" cols="30" rows="3" placeholder="Contacta con el vendedor" class="mensaje_respuesta"></textarea>
+              <input type="button" value="Enviar" class="fit" onClick="enviarmensaje(this)" >
             </div>
           </div>
         </template>

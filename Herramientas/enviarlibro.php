@@ -1,7 +1,7 @@
 <?php 
 	require_once('conexion1.php');
 
-	$codigo = isset($_POST['codigo'])?$_POST['codigo']:'';
+	$codigo = isset($_POST['codigo'])?$_POST['codigo']:'error codigo';
 	$titulo = isset($_POST['titulo'])?$_POST['titulo']:'no hay nada';
 	$autor = isset($_POST['autor'])?$_POST['autor']:'';
 	$genero = isset($_POST['genero'])?$_POST['genero']:'';

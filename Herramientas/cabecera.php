@@ -35,7 +35,7 @@
       </li>
       <li class="xxx">
           <a href="Principal.php">
-          	<img src="<?php echo $_SESSION['foto'] ?>" alt="imagen usuario" class="img_perfil">
+          	<img src="<?php echo $_SESSION['foto'] ?>" class="img_perfil">
           </a>
       </li>
 		</ul>

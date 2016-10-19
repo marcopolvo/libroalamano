@@ -1,15 +1,26 @@
 (function(){
    	var url ='Herramientas/generarlibros.php';
     var link = 	document.getElementById('codigo_libro').value;
-
    		$.ajax({
 		url:"https://www.googleapis.com/books/v1/volumes/"+link,
 		dataType: "json",
 		success: function(data){
-			document.querySelector('#libro__portada').src=typeof data.volumeInfo.imageLinks.small!='undefined'?data.volumeInfo.imageLinks.small:'images/sin_portada.png';
-			document.querySelector('#libro__titulo').innerHTML=typeof data.volumeInfo.title!='undefined'?data.volumeInfo.title:'Titulo desconocido';
-			document.querySelector('#libro__autor').innerHTML=typeof data.volumeInfo.authors!='undefined'?data.volumeInfo.authors:'Sin datos del autor';
-			document.querySelector('#libro__resumen').innerHTML=typeof data.volumeInfo.description!='undefined'?data.volumeInfo.description:'Sin resumen';
+			document.querySelector('#libro__portada').src=typeof data
+				.volumeInfo.imageLinks
+				.small!='undefined'?
+				data.volumeInfo.imageLinks.small:
+				'images/sin_portada.png';
+			document.querySelector('#libro__titulo').innerHTML=typeof data
+				.volumeInfo.title!='undefined'?
+				data.volumeInfo.title:
+				'Titulo desconocido';
+			document.querySelector('#libro__autor').innerHTML=typeof data
+				.volumeInfo.authors!='undefined'?
+				data.volumeInfo.authors:
+				'Sin datos del autor';
+			document.querySelector('#libro__resumen').innerHTML=typeof data
+				.volumeInfo.description!='undefined'?
+				data.volumeInfo.description:'Sin resumen';
 		},
 		type: 'GET'
 		});
@@ -22,7 +33,10 @@
 					var t = document.querySelector('#template_ultimos')
 					var clone = document.importNode(t.content, true);
 					clone.querySelector('.libro_enlace').href += datos[i].codigo;
-					clone.querySelector('.libro_imagen').src = typeof datos[i].portada!='undefined'?datos[i].portada:'images/sin_portada.png';
+					clone.querySelector('.libro_imagen').src = typeof datos[i]
+						.portada!='undefined'?
+						datos[i].portada:
+						'images/sin_portada.png';
 					clone.querySelector('#titulo_libro_ultimos').innerHTML = datos[i].titulo;
 					clone.querySelector('#autor_libro_ultimos').innerHTML = datos[i].autor;
 					document.querySelector('.ultimos').appendChild(clone);
@@ -59,7 +73,9 @@
 						clone.querySelector('.precio').innerHTML = '<b>Precio: $ </b>'+datos[i].precio;
 						clone.querySelector('.listadeseos').innerHTML = '<b>Lista de deseos: </b>'+datos[i].librosrequeridos;	
 					}
-						clone.querySelector('.usuariofertante').innerHTML = datos[i].usuario;
+						clone.querySelector('.usuariofertante').innerHTML = datos[i].nombre;
+						clone.querySelector('.nombreoferente').value = datos[i].usuario;
+						clone.querySelector('.foto_oferente').src = datos[i].foto;
 						clone.querySelector('.estadolibro').innerHTML = datos[i].estadolibro;
 						clone.querySelector('.imagenboton').id = datos[i].id
 						document.querySelector('.ventana_oferta').appendChild(clone);
@@ -110,8 +126,6 @@ function mostrarModal(boton){
 		var desplegable = $(boton)
 			.parents('.ofrecerlibros')
 			.find('.desplegable')
-			console.log(boton)
-			console.log(desplegable)
 		$('.desplegable').not(desplegable).hide('slow')
 		desplegable.toggle('slow')
 		$('.mensaje_respuesta').val('')
@@ -123,15 +137,17 @@ function mostrarModal(boton){
 function enviarmensaje(boton){
 	var botonPadre = $(boton).parents('.ofrecerlibros')
     var mensaje = botonPadre.find('.mensaje_respuesta').val()
+    console.log(botonPadre)
 	if(!mensaje==''){
 	    var emisor   = 	document.getElementById('nomusuario').value
-	    //var receptor = 	botonPadre.find('.emailreceptor').val()
+	    var receptor = 	botonPadre.find('.nombreoferente').val()
 	    var url ='Herramientas/enviarmensajes.php';
 	    var datosmensaje = {
 	        "emisor": emisor,
 	        "receptor": receptor,
 	        "mensaje": mensaje
 	    };
+	    console.log(receptor)
 	    $.ajax({
 	        type: "POST",
 	        url: url,
@@ -153,7 +169,27 @@ function enviarmensaje(boton){
 
 function mostrarModalA(){
 	if (document.getElementById('nomusuario').value!='') {
-		$('#botonlistadeseos').add('.modal').removeClass('invisible');		
+		var link = 	document.getElementById('codigo_libro').value
+		var usuario = document.getElementById('nomusuario').value
+		var url ='Herramientas/enviarmensajes.php';
+	    var datosmensaje = {
+	        "link": link,
+	        "usuario": usuario
+	    };
+	    console.log(datosmensaje)
+	    $.ajax({
+	        type: "POST",
+	        url: url,
+	        data: datosmensaje, 
+	        success: function(data){
+	        	console.log(data)
+				$('#botonlistadeseos').add('.modal').removeClass('invisible');
+		    },
+	        error: function(XMLHttpRequest, textStatus, errorThrown) {
+     			alert(XMLHttpRequest);
+     			console.log(XMLHttpRequest);
+			},
+	    });		
 	}else{
 		$('#sugerirlogin').add('.modal').removeClass('invisible');
 	}

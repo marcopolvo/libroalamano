@@ -38,7 +38,7 @@
 		mensajes.emisor = usuarios.email WHERE 
 		receptor = '{$receptor}'&& 
 		estado !='borrado' ORDER BY 
-		fecha DESC, hora DESC";
+		fecha ASC, hora ASC";
 	$sql2 = "UPDATE mensajes SET estado = ? WHERE receptor =? && estado = ?";
 	$statement = $pdo->prepare($sql);
 	$statement->execute(array());
