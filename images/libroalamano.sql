@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2016 a las 00:25:47
+-- Tiempo de generación: 17-10-2016 a las 05:21:01
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -23,56 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentarios`
---
-
-CREATE TABLE `comentarios` (
-  `fecha` datetime NOT NULL,
-  `usuario` varchar(50) NOT NULL,
-  `codigolibro` varchar(50) NOT NULL,
-  `mensaje` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `deseos`
---
-
-CREATE TABLE `deseos` (
-  `usuario` varchar(50) NOT NULL,
-  `codigolibro` varchar(50) NOT NULL,
-  `genero` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `favoritos`
---
-
-CREATE TABLE `favoritos` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(50) NOT NULL,
-  `codigolibro` varchar(50) NOT NULL,
-  `genero` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `leidos`
---
-
-CREATE TABLE `leidos` (
-  `usuario` varchar(50) NOT NULL,
-  `codigolibro` varchar(50) NOT NULL,
-  `genero` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `libros`
 --
 
@@ -85,7 +35,7 @@ CREATE TABLE `libros` (
   `fechaHora` datetime DEFAULT NULL,
   `actividad` int(11) DEFAULT NULL,
   `persona3` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `libros`
@@ -174,6 +124,7 @@ INSERT INTO `libros` (`codigo`, `titulo`, `autor`, `genero`, `portada`, `fechaHo
 ('XjRjBgAAQBAJ', 'El coronel no tiene quien le escriba', 'Gabriel García Márquez', 'realismo magico', 'http://books.google.com.co/books/content?id=XjRjBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
 ('xkiOCwAAQBAJ', 'Wigetta', 'Willyrex,Vegetta777', 'juvenil', 'http://books.google.com.co/books/content?id=xkiOCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
 ('XQm2CwAAQBAJ', 'Be Yourself', 'María Cadepe', 'juvenil', 'http://books.google.com.co/books/content?id=XQm2CwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
+('xWwqDAAAQBAJ', 'La guerra de los mundos', 'H. G. Wells', 'Género del libro', 'http://books.google.com/books/content?id=xWwqDAAAQBAJ', '2016-10-09 22:57:32', NULL, NULL),
 ('yr6CyVLtOmoC', 'Drácula (edición ilustrada)', 'Bram Stoker', 'Terror', 'http://books.google.com.co/books/content?id=yr6CyVLtOmoC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73JVY7Rb-_SFFfa5HQR8Xqd_7YA-04oGzbLTl94xSzFxvoaPDym9-6EkIeGYIrPJtLHEf_Gnvx5APwHyNF4g_4npt', NULL, NULL, NULL),
 ('yS70CwAAQBAJ', 'La maldición de la reina Leonor', 'Peridis', 'contemporanea', 'http://books.google.com.co/books/content?id=yS70CwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
 ('YvL_CwAAQBAJ', 'Donde los escorpiones', 'Lorenzo Silva', 'novela negra', 'http://books.google.com.co/books/content?id=YvL_CwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
@@ -181,6 +132,51 @@ INSERT INTO `libros` (`codigo`, `titulo`, `autor`, `genero`, `portada`, `fechaHo
 ('zHFKKq4UUcMC', 'El país de los espíritus', 'Miguel Ruiz Montañez', 'accion y aventuras', 'http://books.google.com.co/books/content?id=zHFKKq4UUcMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
 ('ZOX7heyc6j8C', 'Shangri-La', 'Julio Murillo', 'accion y aventuras', 'http://books.google.com.co/books/content?id=ZOX7heyc6j8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL),
 ('_iFoAgAAQBAJ', 'El guardián invisible', 'Dolores Redondo', 'novela negra', 'http://books.google.com.co/books/content?id=_iFoAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `librosintercambio`
+--
+
+CREATE TABLE `librosintercambio` (
+  `usuario` varchar(50) NOT NULL,
+  `precio` int(11) NOT NULL,
+  `librosrequeridos` varchar(200) NOT NULL,
+  `estadolibro` varchar(200) NOT NULL,
+  `estado` int(11) NOT NULL,
+  `codigo` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `librosintercambio`
+--
+
+INSERT INTO `librosintercambio` (`usuario`, `precio`, `librosrequeridos`, `estadolibro`, `estado`, `codigo`) VALUES
+('admin', 20000, 'cien años de soledad', 'perfecto estado solo tiene mes y medio de uso.', 3, 'hm3NrQEACAAJ'),
+('admin', 9000, '', 'tiene un marcas de lapicero en la tapa ', 1, 'Clv4AwAAQBAJ'),
+('admin', 9000, '', 'tiene un marcas de lapicero en la tapa ', 1, 'Clv4AwAAQBAJ'),
+('admin', 0, 'la biblia', 'buen estado un poco ajadas las hojas del medio', 2, 'xi2URRig7jYC'),
+('admin', 5000, '', 'perfecto estado', 1, 'x3McbWQy5ggC'),
+('admin', 25000, '', 'en perfecto estado', 1, 'x3McbWQy5ggC'),
+('admin', 30000, 'crimen y castigo', 'muy buen estado como nuevo', 3, 'yr6CyVLtOmoC'),
+('admin', 0, 'el alquimista', 'no tiene la tapa posterior', 2, 'Fou8rQEACAAJ'),
+('admin', 90000, '', 'el libro se encuentra en perfecto estado', 1, 'Itfec9oaPNgC'),
+('admin', 90000, '', 'el libro se encuentra en perfecto estado', 1, 'Itfec9oaPNgC'),
+('material de prueba', 0, 'material de prueba', 'material de prueba', 3, 'material de prueba'),
+('material de prueba', 0, 'material de prueba', 'material de prueba', 3, 'material de prueba'),
+('material de prueba', 0, 'material de prueba', 'material de prueba', 3, 'material de prueba'),
+('XXXXXxxxXXXX', 0, 'XXXXXxxxXXXX', 'XXXXXxxxXXXX', 3, 'XXXXXxxxXXXX'),
+('', 0, '', '', 0, ''),
+('', 0, '', '', 0, ''),
+('', 0, '', '', 0, ''),
+('', 0, '', '', 0, ''),
+('OOOOOOOOOOOO', 0, 'OOOOOOOOOOOO', 'OOOOOOOOOOOO', 3, 'OOOOOOOOOOOO'),
+('OOOOOOOOOOOO', 0, 'OOOOOOOOOOOO', 'OOOOOOOOOOOO', 3, 'OOOOOOOOOOOO'),
+('SIN USUARIO', 0, 'NINGUN LIBRO REQUERIDO', 'LIBRO SIN ESTADO', 0, '1111111111'),
+('SIN USUARIO', 0, 'NINGUN LIBRO REQUERIDO', 'LIBRO SIN ESTADO', 0, '1111111111'),
+('SIN USUARIO', 0, 'NINGUN LIBRO REQUERIDO', 'LIBRO SIN ESTADO', 0, '2222222222'),
+('Jose Soto', 0, '', '', 0, 'xWwqDAAAQBAJ');
 
 -- --------------------------------------------------------
 
@@ -203,58 +199,47 @@ CREATE TABLE `mensajes` (
 --
 
 INSERT INTO `mensajes` (`id`, `fecha`, `hora`, `emisor`, `receptor`, `mensaje`, `estado`) VALUES
-(1, '2016-10-13', '10:15:11', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'cenix es una empresa en un impresionante crecimiento en tan solo un año', 'leido'),
-(2, '2016-10-13', '10:15:11', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'cenix es una empresa en un impresionante crecimiento en tan solo un año', 'leido'),
-(3, '2016-10-13', '10:19:09', 'josefsoto@hotmail.com', 'cenixsoluciones@gmail.com', 'ola ke ase', 'borrado'),
+(1, '2016-10-13', '10:15:11', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'cenix es una empresa en un impresionante crecimiento en tan solo un año', 'sinleer'),
+(2, '2016-10-13', '10:15:11', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'cenix es una empresa en un impresionante crecimiento en tan solo un año', 'sinleer'),
+(3, '2016-10-13', '10:19:09', 'josefsoto@hotmail.com', 'cenixsoluciones@gmail.com', 'ola ke ase', 'leido'),
 (4, '2016-10-12', '16:30:18', 'cenixsoluciones@gmail.com', 'jose@soto.co', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual', 'sinleer'),
 (5, '2016-10-13', '10:19:09', 'josefsoto@hotmail.com', 'cenixsoluciones@gmail.com', 'ola ke ase', 'borrado'),
 (6, '2016-10-12', '16:30:18', 'cenixsoluciones@gmail.com', 'jose@soto.co', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual', 'sinleer'),
-(7, '2016-10-13', '12:21:28', 'jose@soto.com', 'cenixsoluciones@gmail.com', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system,', 'borrado'),
+(7, '2016-10-13', '12:21:28', 'jose@soto.com', 'cenixsoluciones@gmail.com', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system,', 'leido'),
 (8, '2016-10-11', '11:18:34', 'josefsoto@hotmail.es', 'jose@soto.com', 'mensaje de prueba sin cuenta', 'sinleer'),
 (9, '2016-10-13', '12:21:28', 'jose@soto.com', 'cenixsoluciones@gmail.com', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system,', 'leido'),
 (10, '2016-10-11', '11:18:34', 'josefsoto@hotmail.es', 'jose@soto.com', 'mensaje de prueba sin cuenta', 'sinleer'),
 (18, '2016-10-15', '10:54:28', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.com', 'emailreceptoremailreceptoremailreceptoremailreceptoremailreceptor', 'sinleer'),
-(19, '2016-10-15', '11:06:18', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', 'hola cenix gracias por tu mensaje te respondo como prueba numero 1 fecha 15 octubre 2016', 'borrado'),
-(20, '2016-10-15', '15:20:02', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'borrado'),
-(21, '2016-10-15', '15:20:41', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(', 'borrado'),
-(22, '2016-10-15', '15:21:34', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'borrado'),
+(19, '2016-10-15', '11:06:18', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', 'hola cenix gracias por tu mensaje te respondo como prueba numero 1 fecha 15 octubre 2016', 'leido'),
+(20, '2016-10-15', '15:20:02', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'leido'),
+(21, '2016-10-15', '15:20:41', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(', 'leido'),
+(22, '2016-10-15', '15:21:34', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'leido'),
 (23, '2016-10-15', '15:23:24', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'leido'),
 (24, '2016-10-15', '15:23:32', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'leido'),
-(25, '2016-10-15', '15:33:14', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'hola jose soto muy largo el mensaje rompe el layout 15 octubre 2016', 'leido'),
+(25, '2016-10-15', '15:33:14', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'hola jose soto muy largo el mensaje rompe el layout 15 octubre 2016', 'sinleer'),
 (26, '2016-10-15', '15:33:51', 'cenixsoluciones@gmail.com', 'jose@soto.com', '$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')$(''.mensaje_respuesta'').val('''')', 'sinleer'),
-(27, '2016-10-15', '18:33:26', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 'leido'),
-(28, '2016-10-17', '15:47:02', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', 'probando mensajes el dia 17 octubre 2016', 'leido'),
-(34, '2016-10-18', '17:03:38', 'cenixsoluciones@gmail.com', 'cenixsoluciones@gmail.com', 'prueba envió oferta numero 4 ', 'leido'),
-(35, '2016-10-18', '17:11:23', 'cenixsoluciones@gmail.com', 'cenixsoluciones@gmail.com', 'prueba numero 5 fecha 18 octubre 2016', 'leido'),
-(36, '2016-10-19', '12:23:41', 'cenixsoluciones@gmail.com', 'cenixsoluciones@gmail.com', 'probando envio de mensajes nueva tabla base de datos fecha 19 octubre 2016', 'leido'),
-(37, '2016-10-19', '21:49:05', 'cenixsoluciones@gmail.com', 'cenixsoluciones@gmail.com', 'hola quiero este libro', 'borrado'),
-(38, '2016-10-19', '21:57:07', 'cenixsoluciones@gmail.com', 'cenixsoluciones@gmail.com', 'me gusta que estes probando los mensajes pero me lo mandaste tarde', 'leido'),
-(39, '2016-10-19', '22:03:01', 'josefsoto@hotmail.es', 'cenixsoluciones@gmail.com', 'me interesa el libro que estas vendiendo', 'leido');
+(27, '2016-10-15', '18:33:26', 'cenixsoluciones@gmail.com', 'josefsoto@hotmail.es', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 'sinleer');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ofertas`
+-- Estructura de tabla para la tabla `mensajesusuarios`
 --
 
-CREATE TABLE `ofertas` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(50) NOT NULL,
-  `precio` int(11) NOT NULL,
-  `librosrequeridos` varchar(200) NOT NULL,
-  `estadolibro` varchar(200) NOT NULL,
-  `estado` int(11) NOT NULL,
-  `codigo` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `mensajesusuarios` (
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL,
+  `emisor` varchar(20) NOT NULL,
+  `receptor` varchar(20) NOT NULL,
+  `mensaje` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `ofertas`
+-- Volcado de datos para la tabla `mensajesusuarios`
 --
 
-INSERT INTO `ofertas` (`id`, `usuario`, `precio`, `librosrequeridos`, `estadolibro`, `estado`, `codigo`) VALUES
-(1, 'cenixsoluciones@gmail.com', 20000, 'cualquier libro', 'todos los libros estan en perfecto estado con algunas pequeñas arrugas', 3, '1Ij-AgAAQBAJ'),
-(2, 'cenixsoluciones@gmail.com', 30000, '', 'en perfecto estado', 1, ''),
-(3, 'cenixsoluciones@gmail.com', 0, 'cualquier libro', 'libro en perfecto estado', 2, '1Ij-AgAAQBAJ');
+INSERT INTO `mensajesusuarios` (`fecha`, `hora`, `emisor`, `receptor`, `mensaje`) VALUES
+('2016-09-27', '22:13:57', 'fachy2', 'admin', 'hola');
 
 -- --------------------------------------------------------
 
@@ -268,7 +253,7 @@ CREATE TABLE `reportes` (
   `usuario` varchar(50) NOT NULL,
   `mensaje` varchar(500) NOT NULL,
   `lugar` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `reportes`
@@ -306,36 +291,36 @@ INSERT INTO `usuarios` (`id`, `email`, `nombre`, `apellido`, `clave`, `foto`, `g
 (4, 'josefsoto@hotmail.com', 'jose', 'soto', '$2y$10$pybL7A5ox0gHA3tBItniA.oEKzZYQsrQ1j0UkyKWLiRjgqK2AOuEm', 'images/avatar.jpg', 'Terror', 4, 'registro_correo', '000000', '2016-10-10 09:21:44'),
 (5, 'jose@soto.com', 'jose', 'soto', '$2y$10$N08D42rgm3ArViWnMzFfNOC2qp1m3HQaZf.HPxmwlDfPqdAefIgVe', 'images/avatar.jpg', 'Terror', 4, 'registro_correo', '000000', '2016-10-10 10:51:45'),
 (6, 'jose@soto.co', 'jose', 'soto', '$2y$10$us4oW4vJk7T2AOZY7P/zou2gyrNr/RSbHYr21Wd8GaitIsRr3EsFG', 'images/avatar.jpg', 'Romántica', 4, 'registro_correo', '000000', '2016-10-10 11:08:12'),
-(7, 'cenixsoluciones@gmail.com', 'Cenix', 'Soto', 'f663c39d8fa9b3bc6f9afb495867b0dc', 'https://graph.facebook.com/1787685054807438/picture?width=150&height=150', 'todos', 4, 'facebook', '1787685054807438', '2016-10-14 17:30:47'),
-(8, 'libroalamano@gmail.com', 'Libroalamano', 'Comunidad', '84ec4411b49b54edafcbd13f864f0915', 'https://graph.facebook.com/104003816735103/picture?width=150&height=150', 'todos', 4, 'facebook', '104003816735103', '2016-10-17 15:44:16');
+(7, 'cenixsoluciones@gmail.com', 'Cenix', 'Soto', 'f663c39d8fa9b3bc6f9afb495867b0dc', 'https://graph.facebook.com/1787685054807438/picture?width=150&height=150', 'todos', 4, 'facebook', '1787685054807438', '2016-10-14 17:30:47');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuariosocial`
+--
+
+CREATE TABLE `usuariosocial` (
+  `id` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `first_name` varchar(200) NOT NULL,
+  `last_name` varchar(200) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `hybridauth_provider_name` varchar(255) NOT NULL COMMENT 'Provider name',
+  `hybridauth_provider_uid` varchar(255) NOT NULL COMMENT 'Provider user ID'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuariosocial`
+--
+
+INSERT INTO `usuariosocial` (`id`, `email`, `password`, `first_name`, `last_name`, `created_at`, `hybridauth_provider_name`, `hybridauth_provider_uid`) VALUES
+(2, 'josefsoto@hotmail.es', '1228e98d01b49c28f62daa4738f02d57', 'Jose', 'Soto', '2016-10-04 19:41:59', 'facebook', '345589839112014'),
+(3, 'deivisjimenez@unicesar.edu.co', '8c21a74ea75756e83cff12621613f1c7', 'Deivid David', 'Jimenez', '2016-10-05 11:40:11', 'facebook', '1386680954694068');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`fecha`,`usuario`);
-
---
--- Indices de la tabla `deseos`
---
-ALTER TABLE `deseos`
-  ADD PRIMARY KEY (`usuario`,`codigolibro`);
-
---
--- Indices de la tabla `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `leidos`
---
-ALTER TABLE `leidos`
-  ADD PRIMARY KEY (`usuario`,`codigolibro`);
 
 --
 -- Indices de la tabla `libros`
@@ -351,13 +336,6 @@ ALTER TABLE `mensajes`
   ADD KEY `emisor` (`emisor`);
 
 --
--- Indices de la tabla `ofertas`
---
-ALTER TABLE `ofertas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario` (`usuario`);
-
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -365,29 +343,32 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indices de la tabla `usuariosocial`
+--
+ALTER TABLE `usuariosocial`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `hybridauth_idx` (`hybridauth_provider_name`,`hybridauth_provider_uid`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `favoritos`
---
-ALTER TABLE `favoritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
---
--- AUTO_INCREMENT de la tabla `ofertas`
---
-ALTER TABLE `ofertas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `usuariosocial`
+--
+ALTER TABLE `usuariosocial`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
@@ -397,12 +378,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `mensajes`
   ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`emisor`) REFERENCES `usuarios` (`email`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `ofertas`
---
-ALTER TABLE `ofertas`
-  ADD CONSTRAINT `ofertas_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`email`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,8 +1,8 @@
 <?php 
 	session_start();
-	 if (isset($_SESSION['usuario'])) {
-        header('location: Principal.php');
-    }  
+	if (isset($_SESSION['usuario'])) {
+		header('location: Principal.php');
+	}  
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -86,7 +86,7 @@
 			</div>
 		</div>
 
-     	<!-- Header -->
+		<!-- Header -->
 		<header id="header">
 			<h1><a href="index.php"><img src="images/logo_librofilos.png" alt="" class="logo"></a></h1>
 			<nav id="nav">
@@ -100,53 +100,53 @@
 		</header>
 
 		<!-- Banner -->
-			<section id="banner">
-				<h2>Vive y comparte tu pasión por los libros. </h2>
-				<p>Una comunidad que ama los libros tanto como tú.</p>
-				<ul class="actions">
-					<li>
-						<a href="registro.php" id="resgistro" class="button fit">Registrarte</a>
-					</li>
-				</ul>
-			</section>
+		<section id="banner">
+			<h2>Vive y comparte tu pasión por los libros. </h2>
+			<p>Una comunidad que ama los libros tanto como tú.</p>
+			<ul class="actions">
+				<li>
+					<a href="registro.php" id="resgistro" class="button fit">Registrarte</a>
+				</li>
+			</ul>
+		</section>
 
 		<!-- Buscador -->
-			<section id="two" class="wrapper style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Busca el libro que quieres</h2>
-						<p>Consigue el libro que quieres al mejor precio, recíbelo en la puerta de tu casa.</p>
-		                <div class="buscador">
-		                    <input type="text" class="buscar sombra" placeholder="Buscar libro" name="Titulo" id="buscar">
-		                    <a id="boton_buscar" class="boton_buscar sombra">Buscar</a>
-		                </div>
-					</header>
-					<section class="profiles">
-						 <div class="lista_libros Valorados">
-                            <template id="template_valorados">
-                                <div class="libros">
-                                    <a href="libros.php?libro=" class="libro_enlace">
-                                        <img  src="http://lorempixel.com/400/600/sports" alt="Portada" class="libro_imagen sombra">
-                                        <span class="libro_detalles">
-                                            <p id="titulo_libro_valorados">Título del libro</p>
-                                            <p id="autor_libro_valorados" class="autor">Autor</p>
-                                            <span class="puntaje">*****</span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </template>   
-                        </div>
-					</section>
-					<footer>
-						<p>Aquí podrás compartir, intercambiar o vender tus libros con otros miembros de la comunidad. No dejes tus libros llenarse de polvo deja que otros disfruten tu misma pasión.</p>
-						<ul class="actions">
-							<li>
-								<a href="registro.php" class="button big">Quiero vender o intercambiar mis libros</a>
-							</li>
-						</ul>
-					</footer>
+		<section id="two" class="wrapper style2 special">
+			<div class="container">
+				<header class="major">
+					<h2>Busca el libro que quieres</h2>
+					<p>Consigue el libro que quieres al mejor precio, recíbelo en la puerta de tu casa.</p>
+					<div class="buscador">
+						<input type="text" class="buscar sombra" placeholder="Buscar libro" name="Titulo" id="buscar">
+						<a id="boton_buscar" class="boton_buscar sombra">Buscar</a>
+					</div>
+				</header>
+				<section class="profiles">
+				<div class="lista_libros Valorados">
+				<template id="template_valorados">
+				<div class="libros">
+				<a href="libros.php?libro=" class="libro_enlace">
+				<img  src="http://lorempixel.com/400/600/sports" alt="Portada" class="libro_imagen sombra">
+				<span class="libro_detalles">
+				<p id="titulo_libro_valorados">Título del libro</p>
+				<p id="autor_libro_valorados" class="autor">Autor</p>
+				<span class="puntaje">*****</span>
+				</span>
+				</a>
 				</div>
-			</section>
+				</template>   
+				</div>
+				</section>
+				<footer>
+				<p>Aquí podrás compartir, intercambiar o vender tus libros con otros miembros de la comunidad. No dejes tus libros llenarse de polvo deja que otros disfruten tu misma pasión.</p>
+				<ul class="actions">
+				<li>
+				<a href="registro.php" class="button big">Quiero vender o intercambiar mis libros</a>
+				</li>
+				</ul>
+				</footer>
+			</div>
+		</section>
 			<div
 			  	class="fb-like"
 			  	data-share="true"
