@@ -47,27 +47,44 @@
 		</style>
 	</head>
 	<body class="landing">
+		<!-- cargando -->
+		<div class="precargar">
+			<div>
+				<img src="images/logopequeño.png" alt="">
+				<p>Cargando...</p>
+			</div>
+		</div>
 
-        <!-- cargando -->
-        <div class="precargar">
-        	<div>
-        		<img src="images/logopequeño.png" alt="">
-        		<p>Cargando...</p>
-        	</div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal invisible">
-            <div class="ventana_login invisible" id="login">
-                <a href="#" class="boton_cerrar"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <b><p class="mensaje_error">Usuario o clave errados. Vuelva a intentarlo.</p></b>
-                <form method="post" class="login" id="form_login">
-               		<input type="text" placeholder=" Usuario" class="" name="email" >
-               		<input type="password" placeholder=" Contrasena" class="" name="clave" > 
-               		<input type="submit" class="fit">
-     			</form>
-            </div>
-        </div>
+		<!-- Modal -->
+		<div class="modal invisible">
+			<div class="ventana_login invisible" id="login">
+				<div class="login__social">
+					<a href="registro.php?provider=facebook" class="boton_social facebook">
+						<i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+						<span>Ingresar por facebook</span>
+					</a>
+					<a href="registro.php?provider=twitter" class="boton_social twitter">
+						<i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+						<span>Ingresar por twitter</span>
+					</a>
+					<a href="login-with.php?provider=Google" class="boton_social googleplus">
+						<i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+						<span>Ingresar por Google+</span>
+					</a>
+				</div>
+				<hr>
+				<h4 class="subtitulo">Ingresar por correo</h4>
+				<a href="#" class="boton_cerrar">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</a>
+				<b><p class="mensaje_error">Usuario o clave errados. Vuelva a intentarlo.</p></b>
+				<form method="post" class="login" id="form_login">
+					<input type="text" placeholder=" Email" class="" name="email" >
+					<input type="password" placeholder=" Contraseña" class="" name="clave" > 
+					<input type="submit" class="fit">
+				</form>
+			</div>
+		</div>
 
      	<!-- Header -->
 		<header id="header">

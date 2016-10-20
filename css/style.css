@@ -203,10 +203,6 @@
 
 /* Form */
 
-	form {
-		margin: 0 0 2em 0;
-	}
-
 	label {
 		color: #474747;
 		display: block;
@@ -1253,7 +1249,7 @@
     position: relative;
 }
 .ventana_login input, textarea{
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 .libro_imagen{
     width: 100%;
@@ -1901,4 +1897,7 @@ span.linksmall{
 .rojo{
 	background-color: red !important;
 	color: white;
+}
+hr{
+	margin: 2em 0 .5em;
 }
