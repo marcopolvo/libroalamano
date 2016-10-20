@@ -53,7 +53,6 @@
 		data: 'codigo='+link,
 		dataType: "json",
 		success: function(datos){
-			console.log(datos)
 			if ( typeof datos[0] != "undefined"){
 				for (var i = datos.length - 1; i >= 0; i--) {			
 					var t = document.querySelector('#template_librosofertados')
@@ -90,39 +89,16 @@
 	});
 }());
 
-/*$("#botonenviarmensaje").click(function(){
-    var emisor = 	document.getElementById('nomusuario').value;
-    var receptor = 	document.getElementById('usuariofertante').innerHTML;
-    var mensaje = document.getElementById('mensajelibro').value;
-    var url ='Herramientas/enviarmensajes.php';
-    var datosmensaje = {
-    	"emisor": emisor,
-    	"receptor": receptor,
-    	"mensaje": mensaje
-	};
-    $.ajax({
-    	type: "POST",
-       	url: url,
-       	data: datosmensaje, 
-       	success: function(data){
-            $('.modal').add('.ventana_login').addClass('invisible'); 
-       	}
-    });
-function dejarver(){
-	if (document.getElementById('nomusuario')!='') {
-		$('#ofertaslibros').removeClass('invisible');
-	
-	
-}
-})*/
-
 $(".boton_cerrar").click(function () {	
-    $('.modal').add('.ventana_login').add('.ventana_oferta').addClass('invisible'); 
+	console.log('dentro del boton cerrar')
+	$('.desplegable').hide('slow')
+    $('.modal').add('.ventana_login').add('.ventana_oferta').addClass('invisible');
+    document.getElementById('opinionlibro').value =''
+    $('.mensaje_respuesta').val('') 
 });
 
 function mostrarModal(boton){
 	if (document.getElementById('nomusuario')!='') {
-		console.log('dentro del modal')
 		var desplegable = $(boton)
 			.parents('.ofrecerlibros')
 			.find('.desplegable')
@@ -137,7 +113,6 @@ function mostrarModal(boton){
 function enviarmensaje(boton){
 	var botonPadre = $(boton).parents('.ofrecerlibros')
     var mensaje = botonPadre.find('.mensaje_respuesta').val()
-    console.log(botonPadre)
 	if(!mensaje==''){
 	    var emisor   = 	document.getElementById('nomusuario').value
 	    var receptor = 	botonPadre.find('.nombreoferente').val()
@@ -147,34 +122,32 @@ function enviarmensaje(boton){
 	        "receptor": receptor,
 	        "mensaje": mensaje
 	    };
-	    console.log(receptor)
 	    $.ajax({
 	        type: "POST",
 	        url: url,
 	        data: datosmensaje, 
-	        success: function(data){
-	        	console.log(data)
+	        success: function(data){	
 	            botonPadre.find('.desplegable').toggle('slow');
 	            $('.mensaje_respuesta').val('')
 	        },
-
-	        error: function(XMLHttpRequest, textStatus, errorThrown) {
-     			alert(XMLHttpRequest);
-     			//Se puede obtener informacion útil inspecionando el Objeto XMLHttpRequest
-     			console.log(XMLHttpRequest);
-			},
 	    });
 	}
 }
 
-function mostrarModalA(){
+function mostrarModalA(tabla){
 	if (document.getElementById('nomusuario').value!='') {
-		var link = 	document.getElementById('codigo_libro').value
 		var usuario = document.getElementById('nomusuario').value
-		var url ='Herramientas/enviarmensajes.php';
+		var codigo = 	document.getElementById('codigo_libro').value
+		var mensaje = document.getElementById('opinionlibro').value
+		if (mensaje==''&& tabla =='leidos') {
+			return false
+		}
+		var url ='Herramientas/favoritos.php';
 	    var datosmensaje = {
-	        "link": link,
-	        "usuario": usuario
+	    	'tabla': tabla,
+	        'codigo': codigo,
+	        'usuario': usuario,
+	        'mensaje': mensaje
 	    };
 	    console.log(datosmensaje)
 	    $.ajax({
@@ -183,7 +156,17 @@ function mostrarModalA(){
 	        data: datosmensaje, 
 	        success: function(data){
 	        	console.log(data)
-				$('#botonlistadeseos').add('.modal').removeClass('invisible');
+	        	if (data=='leidos') {
+	        		$('.modal').
+	        			add('.ventana_login').
+	        			add('.ventana_oferta').
+	        			addClass('invisible')
+	        			document.getElementById('opinionlibro').value =''
+	        	}else{	
+	        			$('#botonlistadeseos').
+	        			add('.modal').
+	        			removeClass('invisible');
+	        	}
 		    },
 	        error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert(XMLHttpRequest);

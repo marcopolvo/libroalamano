@@ -29,8 +29,4 @@
 		$mensaje,
 		'sinleer'
 		));
-
-	/*echo "\nPDOStatement::errorInfo():\n";
-	$arr = $insertar->errorInfo();
-	print_r($arr);*/
 ?>

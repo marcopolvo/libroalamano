@@ -2,7 +2,7 @@
     SESSION_START(); 
     $libro = isset($_GET['libro'])?$_GET['libro']:'no hay nada';
     $usuario = isset($_SESSION['email'])?$_SESSION['email']:'';
- ?>
+?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -46,8 +46,8 @@
       <div class="ventana_login sombra invisible" id="botonopinionlibro">
         <a href="#" class="boton_cerrar fa fa-times"></a>
         <label for="opinionlibro"></label>
-        <input type="text" id="opinionlibro" placeholder="Cuéntanos ¿Que te pareció este libro?">
-        <input type="submit" class="fit">
+        <textarea id="opinionlibro" placeholder="Cuéntanos ¿Que te pareció este libro?"></textarea>
+        <input type="button" value="Enviar" class="fit" onclick="mostrarModalA('leidos')">
       </div>
       <div class="ventana_login sombra invisible" id="botonrecomendar" >
         <a href="#" class="boton_cerrar fa fa-times"></a>
@@ -115,7 +115,7 @@
 						</div>
 						<div class="adquirir_detalle_botones">
               <div class="botones_estado">
-                <a href="#" class="button alt" onclick="mostrarModalA()">Lo quiero leer</a>
+                <a href="#" class="button alt" onclick="mostrarModalA('deseos')">Lo quiero leer</a>
 								<a href="#" class="button alt" onclick="mostrarModalB()">Ya lo leí</a>
 								<a href="#" class="button alt" onclick="mostrarModalC()">Recomendar a un amigo</a>    
               </div>
